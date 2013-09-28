@@ -3,11 +3,11 @@
 require File.expand_path('../lib/timelineJS/rails/version', __FILE__)
 
 Gem::Specification.new do |s|
-  s.name = 'timelineJS-rails'
+  s.name = 'timelineJS_rails'
   s.version = TimelineJS::Rails::VERSION
-  s.authors = ['Tom Huang']
-  s.email = ['hzlhu.dargon@gmail.com']
-  s.homepage = 'https://github.com/NanJingBoy/timelineJS-rails'
+  s.authors = ['zires']
+  s.email = ['zshuaibin@gmail.com']
+  s.homepage = 'https://github.com/zires/timelineJS-rails'
   s.summary = 'timelineJS packaged for the Rails asset pieline'
   s.description = "timelineJS resources files packaged for the Rails asset pieline"
 
