@@ -35,13 +35,9 @@ module TimelineJS
 
       protected
 
+        # You can override this method in your view.
         def default_timelinejs_options
-          {
-            width: '100%',
-            height: '600',
-            css: stylesheet_path('timelineJS/timeline'),
-            js: javascript_path('timelineJS/timeline-min')
-          }
+          {width: '100%', height: '600'}
         end
 
     end
