@@ -8,7 +8,9 @@ s2="'\"]?(?!data:)([^\)";
 s3="'\"]+)['\"]?\)";
 r=$s1$s2$s3;
 
-exp='s/'$r'/<%= image_path("timelineJS\/$1") %>/g';
+echo $r;
+
+exp='s/'$r'/url(<%= image_path("timelineJS\/$1") %>)/g';
 
 perl -pi -e "$exp" $timelineCss;
 perl -pi -e "$exp" $darkCss;
