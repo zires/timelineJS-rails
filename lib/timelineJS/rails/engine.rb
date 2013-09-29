@@ -10,10 +10,10 @@ module TimelineJS
         end
 
         config.assets.precompile += %w(
-          timelineJS/timelineJS.js
-          timelineJS/timeline.css
-          timelineJS/timeline-min.js
-          timelineJS/themes/dark.css
+          timelineJS.js
+          css/timeline.css
+          css/themes/dark.css
+          js/timeline-min.js
         )
       end
 
