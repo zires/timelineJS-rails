@@ -6,9 +6,11 @@ module TimelineJS
       # @example
       #   <%= timeline_config(embed_id: 'my-timeline', source: 'path_to_json/or_link_to_googlespreadsheet') %>
       def timeline_config(options = {})
+        turbolink = options.delete(:turbolink)
+        turbolink = turbolink.nil? ? true : turbolink
         output = "<div id='#{options[:embed_id]}'></div>"
         output << javascript_tag("var timeline_config = #{default_timelinejs_options.merge(options).to_json};")
-        output << javascript_include_tag('timelineJS/timelineJS')
+        output << javascript_include_tag('timelineJS', 'data-turbolinks-track' => turbolink)
         raw(output)
       end
 
@@ -17,7 +19,10 @@ module TimelineJS
       #   <%= create_storyJS('my-timeline', source: 'path_to_json/or_link_to_googlespreadsheet') %>
       def create_storyJS(embed_id, options = {})
         options[:embed_id] = embed_id
-        output =  javascript_include_tag('timelineJS/timelineJS')
+        options[:type]     = 'timeline' unless options[:type]
+        turbolink          = options.delete(:turbolink)
+        turbolink          = turbolink.nil? ? true : turbolink
+        output =  javascript_include_tag('timelineJS', 'data-turbolinks-track' => turbolink)
         output << javascript_tag do
           <<-SCRIPT
             $(document).ready(function() {
