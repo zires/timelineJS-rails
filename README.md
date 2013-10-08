@@ -124,6 +124,17 @@ If you want to set the font theme, just add the CSS to `application.css`:
   });
 ```
 
+```ruby
+<%= timeline_config(
+      embed_id: "timeline_id",
+      source: '/events.json',
+      height: '600',
+      lang: 'zh-cn',
+      font: 'Bevan-PotanoSans'
+  )
+%>
+```
+
 ## Thanks
 >- [TimelineJS](https://github.com/VeriteCo/TimelineJS)
 
